@@ -133,9 +133,80 @@
        object-fit: cover
      }
 
+     /** Section Blog Layout */
+     .layout {
+       width: 100%;
+
+       display: grid;
+       grid:
+         "main sidebar" 1fr / 2fr 1fr;
+       gap: 8px;
+     }
+
+     .main {
+       grid-area: main;
+     }
+
+     .sidebar {
+       grid-area: sidebar;
+       padding-top: 40px;
+     }
+
+     .recent-post {
+       display: flex;
+       flex-direction: row;
+       height: 8rem;
+       padding-left: 1em;
+       padding-right: 1em;
+       border-radius: 10px;
+       transition: .4s ease-in-out;
+     }
+
+     .post-thumb {
+       position: relative;
+       margin-right: 1em;
+       height: 46px;
+       align-self: center;
+       flex: 15%;
+     }
+
+     .post-thumb img {
+       border-radius: 5px;
+       max-width: 100%;
+       height: 100%;
+       object-fit: cover;
+       border-radius: 5px;
+     }
+
+     .post-info {
+       position: relative;
+       color: black;
+       align-self: center;
+       flex: 85%;
+     }
+
+     .post-info p {
+       margin: 0;
+     }
+
+     .post-info .name {
+       line-height: 1;
+       font-size: 1.6rem;
+     }
+
+     .post-date {
+       font-size: 0.6em;
+     }
+
+     /** End Section Blog Layout */
+
      @media screen and (max-width:960px) {
        article {
          container: card/inline-size;
+       }
+
+       .layout {
+         display: inline;
        }
      }
 
@@ -259,7 +330,7 @@
      </article>
    </section> -->
 
-   <section class="articles" style="padding-top:40px">
+   <!-- <section class="articles" style="padding-top:40px">
 
      <?php
       // Leer el archivo JSON
@@ -288,6 +359,93 @@
        <p>No hay noticias disponibles.</p>
      <?php endif; ?>
 
+   </section> -->
+
+   <section class="layout">
+     <div class="main">
+       <section class="articles" style="padding-top:40px;max-width:100%;">
+         <article>
+           <div class="article-wrapper">
+             <figure><img alt="" src="https://picsum.photos/id/1011/800/450"></figure>
+             <div class="article-body">
+               <h4>Minedu junto con Difoca descentralizado en una sesión extraordinaria en Ayacucho</h4>
+               <p class="medium">Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestassdasda sdasdasda sdasd sds.</p><a class="read-more" href="#">Leer más <span class="sr-only">about this is some title</span><svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                   <path clip-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" fill-rule="evenodd" />
+                 </svg></a>
+             </div>
+           </div>
+         </article>
+         <article>
+           <div class="article-wrapper">
+             <figure><img alt="" src="https://picsum.photos/id/1005/800/450"></figure>
+             <div class="article-body">
+               <h4>Minedu junto con Difoca descentralizado en una sesión extraordinaria en Ayacucho</h4>
+               <p class="medium">Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.</p><a class="read-more" href="#">Leer más <span class="sr-only">about this is some title</span><svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                   <path clip-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" fill-rule="evenodd" />
+                 </svg></a>
+             </div>
+           </div>
+         </article>
+         <article>
+           <div class="article-wrapper">
+             <figure><img alt="" src="https://picsum.photos/id/103/800/450"></figure>
+             <div class="article-body">
+               <h4>Minedu junto con Difoca descentralizado en una sesión extraordinaria en Ayacucho</h4>
+               <p class="medium">Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.</p><a class="read-more" href="#">Leer más <span class="sr-only">about this is some title</span><svg class="icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                   <path clip-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" fill-rule="evenodd" />
+                 </svg></a>
+             </div>
+           </div>
+         </article>
+       </section>
+     </div>
+     <div class="sidebar">
+       <div class="recent-post">
+         <div class="post-thumb">
+           <img alt="" src="https://picsum.photos/id/103/800/450">
+         </div>
+         <div class="post-info">
+           <p class="name">Minedu junto con Difoca descentralizado en una sesión extraordinaria en Ayacucho</p>
+           <p class="post-date">12 de Diciembre, 2024</p>
+         </div>
+       </div>
+       <div class="recent-post">
+         <div class="post-thumb">
+           <img alt="" src="https://picsum.photos/id/103/800/450">
+         </div>
+         <div class="post-info">
+           <p class="name">Minedu junto con Difoca descentralizado en una sesión extraordinaria en Ayacucho</p>
+           <p class="post-date">12 de Diciembre, 2024</p>
+         </div>
+       </div>
+       <div class="recent-post">
+         <div class="post-thumb">
+           <img alt="" src="https://picsum.photos/id/103/800/450">
+         </div>
+         <div class="post-info">
+           <p class="name">Minedu junto con Difoca descentralizado en una sesión extraordinaria en Ayacucho</p>
+           <p class="post-date">12 de Diciembre, 2024</p>
+         </div>
+       </div>
+       <div class="recent-post">
+         <div class="post-thumb">
+           <img alt="" src="https://picsum.photos/id/103/800/450">
+         </div>
+         <div class="post-info">
+           <p class="name">Minedu junto con Difoca descentralizado en una sesión extraordinaria en Ayacucho</p>
+           <p class="post-date">12 de Diciembre, 2024</p>
+         </div>
+       </div>
+       <div class="recent-post">
+         <div class="post-thumb">
+           <img alt="" src="https://picsum.photos/id/103/800/450">
+         </div>
+         <div class="post-info">
+           <p class="name">Minedu junto con Difoca descentralizado en una sesión extraordinaria en Ayacucho</p>
+           <p class="post-date">12 de Diciembre, 2024</p>
+         </div>
+       </div>
+     </div>
    </section>
 
    <?php
